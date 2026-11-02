@@ -1,0 +1,11 @@
+import math
+
+def solution(x,y,d):
+    distance_to_cover = y - x
+    if distance_to_cover % d == 0:
+        return distance_to_cover/d
+    else:
+        return math.ceil((distance_to_cover/d))
+
+result = solution(25, 85, 30)
+print(result)
