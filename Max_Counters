@@ -1,0 +1,21 @@
+def solution(N, A):
+    counters = [0] * N
+    base = 0
+    current_max = 0
+
+    for a in A:
+        if 1 <= a <= N:
+            index = a - 1
+            if counters[index] < base:
+                counters[index] = base
+            counters[index] += 1
+            current_max = max(current_max, counters[index])
+        else:
+            base = current_max
+    for i in range(N):
+        if counters[i] < base:
+            counters[i] = base
+
+    return counters
+result = solution(5, [3, 4, 4, 6, 1, 4, 4])
+print(result)
