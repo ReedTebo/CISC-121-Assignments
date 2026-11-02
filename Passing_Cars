@@ -1,0 +1,12 @@
+def solution(A):
+    east = 0
+    num_passing = 0
+    for a in A:
+        if a == 0:
+            east += 1
+        else:
+            num_passing += east
+    return num_passing
+
+result = solution([0, 1, 0, 1, 1])
+print(result)
