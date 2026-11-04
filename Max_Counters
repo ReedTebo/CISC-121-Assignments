@@ -1,17 +1,23 @@
 def solution(N, A):
+    # Create counters array of 0's with length N
     counters = [0] * N
     base = 0
     current_max = 0
 
+    # Go through and track
     for a in A:
         if 1 <= a <= N:
             index = a - 1
+            # Update counters to latest base if needed
             if counters[index] < base:
                 counters[index] = base
             counters[index] += 1
+            # Update the maximum
             current_max = max(current_max, counters[index])
         else:
+            # Record new base instead of updating every counter
             base = current_max
+    # Now update every counter (outside of previous for loop for efficiency)
     for i in range(N):
         if counters[i] < base:
             counters[i] = base
