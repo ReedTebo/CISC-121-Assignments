@@ -1,10 +1,13 @@
 def solution(A):
+    # Using a set to increase efficiency
     unpaired = set()
+    # If num is in the set, then remove it. If not, then add it to the set.
     for num in A:
         if num in unpaired:
             unpaired.remove(num)
         else:
             unpaired.add(num)
+    # Return the element left in the set
     return unpaired.pop()
 
 A = [9, 4, 3, 8, 7, 4, 9, 8, 3]
