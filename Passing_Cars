@@ -1,11 +1,16 @@
 def solution(A):
     east = 0
     num_passing = 0
+    # Track the # of cars going east
+    # If a west-going car passes add 1 to num_passing for every east car already found
     for a in A:
         if a == 0:
             east += 1
         else:
             num_passing += east
+    # Says in question to return -1 if "the number of pairs of passing cars exceeds 1,000,000,000."
+    if num_passing > 1000000000:
+        return -1
     return num_passing
 
 result = solution([0, 1, 0, 1, 1])
