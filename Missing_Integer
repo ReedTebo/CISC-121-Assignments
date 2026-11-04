@@ -1,6 +1,10 @@
 def solution(A):
+    # Use set for efficiency
     nums = set(A)
     smallest = 1
+    # Search set for smallest starting with smallest = 1
+    # Add 1 to smallest after each iteration
+    # Search until smallest isn't in the set
     while smallest in nums:
         smallest += 1
     return smallest
