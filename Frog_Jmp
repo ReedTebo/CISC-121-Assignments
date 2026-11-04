@@ -2,10 +2,11 @@ import math
 
 def solution(x,y,d):
     distance_to_cover = y - x
+    # If distance_to_cover/d is an integer
     if distance_to_cover % d == 0:
-        return distance_to_cover/d
+        return distance_to_cover//d
     else:
-        return math.ceil((distance_to_cover/d))
+        return distance_to_cover//d + 1 # This rounds the division upwards to nearest int
 
-result = solution(25, 85, 30)
+result = solution(10, 85, 30)
 print(result)
